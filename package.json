@@ -1,18 +1,19 @@
 {
-	"name": "jquery-breakpointspy",
-	"title": "jQuery Breakpoint Spy",
-	"description": "A plugin that moves content when a Bootstrap breakpoint change occurs",
-	"author": "Casper Kuijjer",
-	"homepage": "https://github.com/ckuijjer/jquery-breakpointspy",
-	"version": "0.0.1",
-	"devDependencies": {
-		"grunt": "~0.4.1",
-		"grunt-cli": "~0.1.7",
-		"grunt-contrib-jshint": "~0.4.3",
-		"grunt-contrib-concat": "~0.3.0",
-		"grunt-contrib-uglify": "~0.2.0"
-	},
-	"scripts": {
-		"test": "grunt travis --verbose"
-	}
+  "name": "jquery-breakpointspy",
+  "title": "jQuery Breakpoint Spy",
+  "description": "A plugin that moves content when a Bootstrap breakpoint change occurs",
+  "author": "Casper Kuijjer",
+  "homepage": "https://github.com/ckuijjer/jquery-breakpointspy",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.7",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "scripts": {
+    "test": "grunt travis --verbose"
+  }
 }

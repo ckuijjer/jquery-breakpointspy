@@ -45,6 +45,13 @@ module.exports = function(grunt) {
 			options: {
 				banner: "<%= meta.banner %>"
 			}
+		},
+
+		watch: {
+			js: {
+				files: ["src/jquery.breakpointspy.js", "Gruntfile.js"],
+				tasks: ["default"]
+			}
 		}
 
 	});
@@ -52,6 +59,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks("grunt-contrib-watch");
 
 	grunt.registerTask("default", ["jshint", "concat", "uglify"]);
 	grunt.registerTask("travis", ["jshint"]);
