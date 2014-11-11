@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<style>
 		.box {
-			padding: 15px;
+			padding: 10px;
 			margin-bottom: 15px;
 			border: 1px solid #bbb;
 			color: #888;
@@ -60,6 +60,37 @@
 					<div class="box box--green">xs third, sm second</div>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<h2>Using duplication</h2>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="visible-xs-block">	
+					<div class="col-xs-12">
+						<div class="box">xs first, sm first</div>
+					</div>
+					<div class="col-xs-12">
+						<div class="box box--pink">xs second, sm third</div>
+					</div>
+					<div class="col-xs-12">
+						<div class="box box--green">xs third, sm second</div>
+					</div>
+				</div>
+				<div class="visible-sm-block visible-md-block visible-lg-block">	
+					<div class="col-sm-6">
+						<div class="box">xs first, sm first</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="box box--green">xs third, sm second</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="box box--pink">xs second, sm third</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="row">
 				<div class="col-xs-12">
 					<h2>Using jQuery Breakpoint Spy</h2>	
