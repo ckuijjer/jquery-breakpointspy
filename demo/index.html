@@ -6,6 +6,43 @@
 		<script src="../dist/jquery.breakpointspy.js"></script>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<style>
+
+body {
+  font-family: Helvetica, Arial;
+  color: #333;
+}
+
+.a {
+  background-color: #E88C3F;
+}
+
+.b {
+  background-color: #A7C378;
+}
+
+.c {
+  background-color: #ACB3DC;
+}
+
+.title,
+.list,
+.graph {
+  border: 1px solid #333;
+  text-align: center;
+  box-shadow: 2px 2px 2px #ddd, inset 0 8px 8px -8px #fff;
+  margin-top: 8px;
+}
+
+.title,
+.list {
+  height: 32px;
+  line-height: 32px;
+}
+
+.graph {
+  height: 72px;
+  line-height: 72px;
+}
 		.box {
 			padding: 10px;
 			margin-bottom: 15px;
@@ -107,6 +144,59 @@
 					<div class="box box--green" data-spy="breakpoint" data-target-xs="#third" data-target-sm="#second">xs third, sm second</div>
 				</div>
 			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2>More complex example</h2>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+		  <div class="row">
+		    <div id="sm-orange"></div>
+		    <div id="sm-green"></div>
+		    <div id="sm-blue"></div>      
+		  </div>
+		  <div class="row">
+		    <div id="xs-orange">
+		      <div class="col-xs-12 col-sm-4" data-spy="breakpoint" data-target-xs="#xs-orange" data-target-sm="#sm-orange">
+		        <div id="title-graph-a">
+		          <div class="title a">Title A</div>
+		          <div class="graph a">Graph A</div>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="col-xs-12">
+		      <div id="list-a" class="list a">List A</div>
+		    </div>
+		    
+		    <div id="xs-green">
+		      <div class="col-xs-12 col-sm-4" data-spy="breakpoint" data-target-xs="#xs-green" data-target-sm="#sm-green">
+		        <div id="title-graph-b">
+		          <div class="title b">Title B</div>
+		          <div class="graph b">Graph B</div>
+		        </div>        
+		      </div>
+		    </div>
+		    <div class="col-xs-12">
+		      <div id="list-b" class="list b">List B</div>
+		    </div>
+		    
+		    <div id="xs-blue">
+		      <div class="col-xs-12 col-sm-4" data-spy="breakpoint" data-target-xs="#xs-blue" data-target-sm="#sm-blue">
+		        <div id="title-graph-c">
+		          <div class="title c">Title C</div>
+		          <div class="graph c">Graph C</div>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="col-xs-12">
+		      <div id="list-c" class="list c">List C</div>
+		    </div>
+		  </div>
 		</div>
 
 		<script>
