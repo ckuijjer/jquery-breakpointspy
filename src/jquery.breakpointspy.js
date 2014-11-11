@@ -28,7 +28,7 @@
 				if (current !== previous) {
 					previous = current;
 
-					detector.trigger("change.breakpointDetector", current);
+					detector.trigger("breakpointDetected", current);
 				}
 			}
 
@@ -56,11 +56,21 @@
 			};
 		})();
 
+
+		function getDataAttributes($el) {
+			var dataAttributes = {};
+
+			$(breakpoints).each(function(i, size) {
+				dataAttributes[size] = $el.data("target-" + size);
+			});
+			return dataAttributes;
+		}
+
 		// The actual plugin constructor
 		function BreakpointSpy(element, options) {
 			this.element = element;
 			this.$element = $(element);
-			this.options = $.extend({}, defaults, options, this._getDataAttributes());
+			this.options = $.extend({}, defaults, options, getDataAttributes(this.$element));
 			this._defaults = defaults;
 			this._name = pluginName;
 			this.init();
@@ -70,29 +80,27 @@
 			init: function () {
 				BreakpointDetector.init();
 
-				// add a event listener to the document as the custom events bubbles up
-				// todo: make sure that as the element is removed this event handler is also
-				// removed.
-				$(document).on("change.breakpointDetector", $.proxy(this._move, this));
+				var self = this,
+					breakpointHandler = function(e, size) {
+						self.move(size);
+					},
+					size = BreakpointDetector.getSize();
 
-				// do the first one manually
-				this._move(null, BreakpointDetector.getSize());
+				self.move(size);
+				$(document).on("breakpointDetected", breakpointHandler);
 			},
 
-			_move: function(e, size) {
-				// walk through the breakpoints
-				// xs sm and input lg should return sm
-				// this should be cached yada yada
+			move: function(size) {
 				var self = this,
 					selector;
 
+				// ascend through all the sizes and keep the selector for the size smaller or equal to
+				// the current size
 				$(breakpoints).each(function(i, current) {
-					// if a selector is set for the current breakpoint remember it
 					if (self.options[current]) {
 						selector = self.options[current];
 					}
 
-					// exit with looking for the size
 					if (current === size) {
 						return false;
 					}
@@ -102,16 +110,6 @@
 					// todo: check if it's already there (or does jQuery handle that?)
 					self.$element.appendTo($(selector));
 				}
-			},
-
-			_getDataAttributes: function() {
-				var self = this,
-					dataAttributes = {};
-
-				$(breakpoints).each(function(i, size) {
-					dataAttributes[size] = self.$element.data("target-" + size);
-				});
-				return dataAttributes;
 			}
 		};
 
