@@ -5,70 +5,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script src="../dist/jquery.breakpointspy.js"></script>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<style>
-
-body {
-  font-family: Helvetica, Arial;
-  color: #333;
-}
-
-.a {
-  background-color: #E88C3F;
-}
-
-.b {
-  background-color: #A7C378;
-}
-
-.c {
-  background-color: #ACB3DC;
-}
-
-.title,
-.list,
-.graph {
-  border: 1px solid #333;
-  text-align: center;
-  box-shadow: 2px 2px 2px #ddd, inset 0 8px 8px -8px #fff;
-  margin-top: 8px;
-}
-
-.title,
-.list {
-  height: 32px;
-  line-height: 32px;
-}
-
-.graph {
-  height: 72px;
-  line-height: 72px;
-}
-		.box {
-			padding: 10px;
-			margin-bottom: 15px;
-			border: 1px solid #bbb;
-			color: #888;
-			background-color: rgba(136, 136, 136, .1);
-		}
-
-		.box--pink {
-			color: #c66;
-			border-color: #f99;
-			background-color: rgba(255, 153, 153, .1);
-		}
-
-		.box--green {
-			color: #6c6;
-			border-color: #9f9;
-			background-color: rgba(153, 255, 153, .1);
-		}
-
-		.box--purple {
-			color: #66c;
-			border-color: #99f;
-			background-color: rgba(153, 153, 255, .1);
-		}
-		</style>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<div class="container">
@@ -133,6 +70,7 @@ body {
 					<h2>Using jQuery Breakpoint Spy</h2>	
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="col-xs-12 col-sm-6">
 					<div class="box">xs first, sm first</div>
@@ -203,7 +141,6 @@ body {
 			$(function() {
 				$('[data-spy="breakpoint"]').breakpointSpy();
 			});
-
 		</script>
 	</body>
 </html>
