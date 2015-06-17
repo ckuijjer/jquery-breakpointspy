@@ -42,6 +42,10 @@
 
 			return {
 				init: function() {
+					if (initialized) {
+						return;
+					}
+
 					createDetector();
 
 					$(window).resize(resize);
@@ -122,5 +126,10 @@
 						}
 				});
 		};
+
+		// Data-api
+		$(function() {
+			$("[data-spy='breakpoint']").breakpointSpy();
+		});
 
 })(jQuery, window, document);

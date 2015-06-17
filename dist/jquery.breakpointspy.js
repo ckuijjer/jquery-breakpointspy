@@ -50,6 +50,10 @@
 
 			return {
 				init: function() {
+					if (initialized) {
+						return;
+					}
+
 					createDetector();
 
 					$(window).resize(resize);
@@ -93,6 +97,7 @@
 						self.move(size);
 					},
 					size = BreakpointDetector.getSize();
+					console.log(size);
 
 				self.move(size);
 				$(document).on("breakpointDetected", breakpointHandler);
@@ -130,5 +135,10 @@
 						}
 				});
 		};
+
+		// Data-api
+		$(function() {
+			$("[data-spy='breakpoint']").breakpointSpy();
+		});
 
 })(jQuery, window, document);
