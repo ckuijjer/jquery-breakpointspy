@@ -97,7 +97,6 @@
 						self.move(size);
 					},
 					size = BreakpointDetector.getSize();
-					console.log(size);
 
 				self.move(size);
 				$(document).on("breakpointDetected", breakpointHandler);
